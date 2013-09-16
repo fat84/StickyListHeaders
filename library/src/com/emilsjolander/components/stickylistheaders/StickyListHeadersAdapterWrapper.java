@@ -141,6 +141,8 @@ class StickyListHeadersAdapterWrapper extends BaseAdapter implements
 		return headerCount;
 	}
 
+
+
 	@Override
 	public Object getItem(int position) {
 		int viewType = getItemViewType(position);
@@ -266,6 +268,7 @@ class StickyListHeadersAdapterWrapper extends BaseAdapter implements
 
 	@Override
 	public void notifyDataSetChanged() {
+        cachedCount = -1;
 		((BaseAdapter) delegate).notifyDataSetChanged();
 	}
 
